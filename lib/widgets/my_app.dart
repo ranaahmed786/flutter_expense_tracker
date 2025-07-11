@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_expense_tracker/widgets/expenses.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+final kcolorScheme = ColorScheme.fromSeed(
+  seedColor: const Color.fromARGB(255, 5, 184, 200),
+);
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Expense Tracker',
+      theme: ThemeData().copyWith(
+        colorScheme: kcolorScheme,
+        appBarTheme: const AppBarTheme().copyWith(
+          backgroundColor: kcolorScheme.onPrimaryContainer,
+          foregroundColor: kcolorScheme.primaryContainer,
+        ),
+        cardTheme: const CardThemeData().copyWith(
+          color: kcolorScheme.secondaryContainer,
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kcolorScheme.primaryContainer,
+            foregroundColor: kcolorScheme.onPrimaryContainer,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+          ),
+        ),
+        textTheme: ThemeData().textTheme.copyWith(
+          titleLarge: GoogleFonts.abrilFatface(
+            fontSize: 24,
+            color: kcolorScheme.onPrimaryContainer,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      home: const Expenses(),
+    );
+  }
+}
