@@ -88,6 +88,7 @@ class _NewItemOverlayState extends State<NewItemOverlay> {
             maxLength: 50,
             decoration: const InputDecoration(label: Text('Title')),
             controller: _titleController,
+            style: TextStyle(color: Theme.of(context).colorScheme.primary),
           ),
           // This is the Amount TextField
           TextField(
@@ -97,6 +98,11 @@ class _NewItemOverlayState extends State<NewItemOverlay> {
               prefix: Text('\$'),
             ),
             controller: _amountController,
+            style: TextStyle(
+              color: Theme.of(
+                context,
+              ).colorScheme.primary, // Change this to your desired color
+            ),
           ),
           // This is the Category and Date Row
           const SizedBox(height: 20),
@@ -118,7 +124,14 @@ class _NewItemOverlayState extends State<NewItemOverlay> {
                         .map(
                           (item) => DropdownMenuItem<Category>(
                             value: item,
-                            child: Center(child: Text(item.name)),
+                            child: Center(
+                              child: Text(
+                                item.name.toUpperCase(),
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
+                              ),
+                            ),
                           ),
                         )
                         .toList(),
@@ -146,6 +159,9 @@ class _NewItemOverlayState extends State<NewItemOverlay> {
                         _selectedDate != null
                             ? formater.format(_selectedDate!)
                             : 'No Date Selected',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                       ),
                       IconButton(
                         icon: Icon(Icons.calendar_month),

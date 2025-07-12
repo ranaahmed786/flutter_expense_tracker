@@ -32,3 +32,24 @@ class Expense {
     return formater.format(date);
   }
 }
+
+class ExpenseBucket {
+  ExpenseBucket({required this.category, required this.totalExpenses});
+  final Category category;
+  double totalExpenses = 0;
+  ExpenseBucket.forCategory(List<Expense> expenses, this.category) {
+    double total = 0;
+    for (final expense in expenses) {
+      if (expense.category == category) {
+        total += expense.amount;
+      }
+    }
+    totalExpenses = total;
+  }
+  double get fill {
+    if (totalExpenses == 0) {
+      return 0;
+    }
+    return totalExpenses! / 100; // Assuming 100 is the max for normalization
+  }
+}

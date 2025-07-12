@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_expense_tracker/models/expense.dart';
+import 'package:flutter_expense_tracker/widgets/chart/chart.dart';
 import 'package:flutter_expense_tracker/widgets/expenseslist/expenses_list.dart';
 import 'package:flutter_expense_tracker/widgets/new_item_overlay.dart';
 
@@ -94,7 +95,7 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          Text('List of Expenses'),
+          Chart(expenses: _expenses),
           Expanded(child: handleEmptyList()),
         ],
       ),
