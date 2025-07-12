@@ -50,6 +50,6 @@ class ExpenseBucket {
     if (totalExpenses == 0) {
       return 0;
     }
-    return totalExpenses! / 100; // Assuming 100 is the max for normalization
+    return totalExpenses / 100; // Assuming 100 is the max for normalization
   }
 }
