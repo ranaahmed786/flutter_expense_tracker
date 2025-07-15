@@ -81,6 +81,7 @@ class _ExpensesState extends State<Expenses> {
       category: Category.leisure,
     ),
   ];
+  get width => MediaQuery.of(context).size.width;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,12 +94,19 @@ class _ExpensesState extends State<Expenses> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Chart(expenses: _expenses),
-          Expanded(child: handleEmptyList()),
-        ],
-      ),
+      body: width < 600
+          ? Column(
+              children: [
+                Chart(expenses: _expenses),
+                Expanded(child: handleEmptyList()),
+              ],
+            )
+          : Row(
+              children: [
+                Expanded(child: Chart(expenses: _expenses)),
+                Expanded(child: handleEmptyList()),
+              ],
+            ),
     );
   }
 }
