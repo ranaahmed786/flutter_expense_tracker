@@ -42,10 +42,12 @@ A modern, cross-platform expense tracking application built with Flutter. Track 
 ## Screenshots
 
 ### Main Dashboard
-*Insert screenshot of the main screen here*
+
+<img width="300" height="550" alt="image" src="https://github.com/user-attachments/assets/1df606c0-fb0a-43d8-9040-aeec6a08df58" />
 
 ### Add Expense Modal
-*Insert screenshot of the item adding screen here*
+
+<img width="300" height="550" alt="image" src="https://github.com/user-attachments/assets/57c684a6-3b58-41db-ab71-bc2611b7a088" />
 
 ## Getting Started
 
